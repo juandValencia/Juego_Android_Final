@@ -3,7 +3,10 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    <com.example.juego_puzzle.GameView
+        android:id="@+id/GameView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
     <LinearLayout
         android:background="#66FFFF	"
         android:layout_width="match_parent"
