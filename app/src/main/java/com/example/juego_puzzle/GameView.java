@@ -26,6 +26,7 @@ import java.util.Random;
 public class GameView extends View {
     private Bitmap bmGrass1, bmGrass2, bmSnake1, bmApple;
     private ArrayList<Grass> arrGrass = new ArrayList<>();
+    private Snake snake;
     private int w = 12, h = 21;
     public static int sizeElementMap = 75 * Constants.SCREEN_WIDTH / 1080;
     private Handler handler;
@@ -52,6 +53,7 @@ public class GameView extends View {
         bmGrass2 = BitmapFactory.decodeResource(this.getResources(), R.drawable.grass03);
         bmGrass2 = Bitmap.createScaledBitmap(bmGrass2, sizeElementMap, sizeElementMap, true);
         bmSnake1 = BitmapFactory.decodeResource(this.getResources(), R.drawable.snake1);
+        bmSnake1 = Bitmap.createScaledBitmap(bmSnake1, 14*sizeElementMap, sizeElementMap, true);
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 if ((j + i) % 2 == 0) {
@@ -61,6 +63,7 @@ public class GameView extends View {
                 }
             }
         }
+        snake=new  Snake(bmSnake1,arrGrass.get(126).getX(),arrGrass.get(126).getY(), 4);
     }
 
     public void draw(Canvas canvas) {
@@ -69,5 +72,6 @@ public class GameView extends View {
         for (int i = 0; i < arrGrass.size(); i++) {
             canvas.drawBitmap(arrGrass.get(i).getBm(), arrGrass.get(i).getX(), arrGrass.get(i).getY(), null);
         }
+        snake.drawSnake(canvas);
     }
 }
