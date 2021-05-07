@@ -1,5 +1,4 @@
 package com.example.juego_puzzle;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -8,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 
 import java.util.ArrayList;
+
 public class Snake {
     private Bitmap bm, bm_head_down, bm_head_left, bm_head_right, bm_head_up,
             bm_body_vertical, bm_body_horizontal, bm_body_bottom_left, bm_body_bottom_right, bm_body_top_left, bm_body_top_right,
@@ -15,7 +15,6 @@ public class Snake {
     private ArrayList<PartSnake> arrPartSnake = new ArrayList<>();
     private int length;
     private boolean move_left, move_right, move_up, move_down;
-
 
     public Snake(Bitmap bm, int x, int y, int length) {
         this.bm = bm;
@@ -114,19 +113,11 @@ public class Snake {
         }
     }
 
-
     public void drawSnake(Canvas canvas){
         for(int i = length-1; i >= 0; i--){
             canvas.drawBitmap(arrPartSnake.get(i).getBm(), arrPartSnake.get(i).getX(), arrPartSnake.get(i).getY(), null);
         }
     }
-
-
-
-
-
-
-
 
     public Bitmap getBm() {
         return bm;
@@ -305,5 +296,19 @@ public class Snake {
         this.move_down = false;
         this.move_left = false;
         this.move_up = false;
+    }
+
+    public void addPart() {
+        PartSnake p = this.arrPartSnake.get(length-1);
+        this.length += 1;
+        if(p.getBm()==bm_tail_right){
+            this.arrPartSnake.add(new PartSnake(bm_tail_right, p.getX()-GameView.sizeElementMap, p.getY()));
+        }else if(p.getBm()==bm_tail_left){
+            this.arrPartSnake.add(new PartSnake(bm_tail_left, p.getX()+GameView.sizeElementMap, p.getY()));
+        }else if(p.getBm()==bm_tail_up){
+            this.arrPartSnake.add(new PartSnake(bm_tail_up, p.getX(), p.getY()+GameView.sizeElementMap));
+        }else if(p.getBm()==bm_tail_down){
+            this.arrPartSnake.add(new PartSnake(bm_tail_up, p.getX(), p.getY()-GameView.sizeElementMap));
+        }
     }
 }
