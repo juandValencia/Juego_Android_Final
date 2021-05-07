@@ -15,6 +15,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    public static ImageView img_swipe;
+    public static Dialog dialogScore;
+    private GameView gv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

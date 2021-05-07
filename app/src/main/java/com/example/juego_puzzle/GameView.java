@@ -64,6 +64,61 @@ public class GameView extends View {
             }
         }
         snake=new  Snake(bmSnake1,arrGrass.get(126).getX(),arrGrass.get(126).getY(), 4);
+        handler = new Handler();
+        r = new Runnable() {
+            @Override
+            public void run() {
+                invalidate();
+            }
+        };
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int a = event.getActionMasked();
+        switch (a){
+            case  MotionEvent.ACTION_MOVE:{
+                if(move==false){
+                    mx = event.getX();
+                    my = event.getY();
+                    move = true;
+                }else{
+                    if(mx - event.getX() > 100 && !snake.isMove_right()){
+                        mx = event.getX();
+                        my = event.getY();
+                        this.snake.setMove_left(true);
+                        isPlaying = true;
+                        MainActivity.img_swipe.setVisibility(INVISIBLE);
+                    }else if(event.getX() - mx > 100 &&!snake.isMove_left()){
+                        mx = event.getX();
+                        my = event.getY();
+                        this.snake.setMove_right(true);
+                        isPlaying = true;
+                        MainActivity.img_swipe.setVisibility(INVISIBLE);
+                    }else if(event.getY() - my > 100 && !snake.isMove_up()){
+                        mx = event.getX();
+                        my = event.getY();
+                        this.snake.setMove_down(true);
+                        isPlaying = true;
+                        MainActivity.img_swipe.setVisibility(INVISIBLE);
+                    }else if(my - event.getY() > 100 && !snake.isMove_down()){
+                        mx = event.getX();
+                        my = event.getY();
+                        this.snake.setMove_up(true);
+                        isPlaying = true;
+                        MainActivity.img_swipe.setVisibility(INVISIBLE);
+                    }
+                }
+                break;
+            }
+            case MotionEvent.ACTION_UP:{
+                mx = 0;
+                my = 0;
+                move = false;
+                break;
+            }
+        }
+        return true;
     }
 
     public void draw(Canvas canvas) {
@@ -72,6 +127,8 @@ public class GameView extends View {
         for (int i = 0; i < arrGrass.size(); i++) {
             canvas.drawBitmap(arrGrass.get(i).getBm(), arrGrass.get(i).getX(), arrGrass.get(i).getY(), null);
         }
+        snake.update();
         snake.drawSnake(canvas);
+        handler.postDelayed(r, 100);
     }
 }
