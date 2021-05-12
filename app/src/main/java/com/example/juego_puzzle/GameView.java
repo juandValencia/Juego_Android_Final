@@ -167,7 +167,7 @@ public class GameView extends View {
 
     public void draw(Canvas canvas){
         super.draw(canvas);
-        canvas.drawColor(0xFF065700);
+        canvas.drawColor(0xffd700);
         for(int i = 0; i < arrGrass.size(); i++){
             canvas.drawBitmap(arrGrass.get(i).getBm(), arrGrass.get(i).getX(), arrGrass.get(i).getY(), null);
         }

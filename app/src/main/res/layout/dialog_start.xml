@@ -20,53 +20,61 @@
             android:layout_height="200dp"
             android:weightSum="2"
             android:orientation="horizontal">
+
             <RelativeLayout
-                android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="match_parent">
+                android:layout_height="162dp"
+                android:layout_weight="1">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_centerInParent="true">
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
                     <ImageView
-                        android:src="@drawable/apple"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:scaleType="fitXY"/>
+                        android:scaleType="fitXY"
+                        android:src="@drawable/apple" />
+
                     <TextView
                         android:id="@+id/txt_dialog_score"
-                        android:textSize="25sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:text="0"
                         android:textColor="#ffffff"
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:textSize="25sp" />
                 </LinearLayout>
             </RelativeLayout>
+
             <RelativeLayout
-                android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="match_parent">
+                android:layout_height="162dp"
+                android:layout_weight="1">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_centerInParent="true">
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
                     <ImageView
-                        android:src="@drawable/ic_baseline_emoji_events_24"
-                        app:tint="#fff0"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:scaleType="fitXY"/>
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_baseline_emoji_events_24"
+                        app:tint="#fff0" />
+
                     <TextView
                         android:id="@+id/txt_dialog_best_score"
-                        android:textSize="25sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:text="0"
                         android:textColor="#ffffff"
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:textSize="25sp" />
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
