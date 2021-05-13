@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/texturasnake"
     tools:context=".Inicio">
 
     <androidx.constraintlayout.widget.Barrier
@@ -26,6 +27,7 @@
         android:layout_height="54dp"
         android:layout_marginTop="348dp"
         android:text="Iniciar Juego"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
