@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Culebrita v2</string>
+    <string name="Agradecimientos1">Agradecimiento para los creadores:
+        Juan Diego Valencia y Santiago Restrepo con el Apoyo de Andres Bedoya
+    </string>
+    <string name="Contacto"> Contactos</string>
+    <string name="Correo1">juand.valenciao@upb.edu.co  santiago.restrepov@upb.edu.co</string>
+    <string name="Correo2">juand.valenciao@upb.edu.co</string>
 </resources>
