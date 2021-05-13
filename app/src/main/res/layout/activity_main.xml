@@ -2,13 +2,15 @@
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/texturasnake"
+    >
     <com.example.juego_puzzle.GameView
         android:id="@+id/gv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
     <LinearLayout
-        android:background="#F5F079	"
+        android:background="#14FF18"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:orientation="horizontal"
