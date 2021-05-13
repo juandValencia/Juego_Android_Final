@@ -10,11 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Juego_puzzle">
         <activity android:name=".Creditos">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Inicio">
             <intent-filter>
@@ -24,11 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

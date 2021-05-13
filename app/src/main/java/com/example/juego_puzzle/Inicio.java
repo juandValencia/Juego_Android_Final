@@ -29,13 +29,25 @@ public class Inicio extends AppCompatActivity {
         creditos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("iniciando juego...");
-              //  iniciarCreditos();
+                iniciarCreditos();
             }
         });
+
+        salir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent salida=new Intent( Intent.ACTION_MAIN); //Llamando a la activity principal
+                finish();
+            }
+        });
+
     }
     private void iniciarJuego(){
         Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+    }
+    private void iniciarCreditos(){
+        Intent i = new Intent(this, Creditos.class);
         startActivity(i);
     }
 
